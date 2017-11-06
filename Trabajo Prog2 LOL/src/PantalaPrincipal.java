@@ -1,15 +1,19 @@
 import java.awt.EventQueue;
+import java.awt.Image;
 
 import javax.swing.JFrame;
 import javax.swing.JTextField;
+import javax.swing.AbstractButton;
+import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import java.awt.Color;
 import javax.swing.JPanel;
+import javax.swing.DropMode;
 
 public class PantalaPrincipal {
 
 	private JFrame frame;
-	private JTextField textField;
+	private JTextField txtNombreInvocador;
 	private JTextField txtServer;
 	private JTextField textField_1;
 	private JButton btnBuscar_1;
@@ -47,16 +51,19 @@ public class PantalaPrincipal {
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frame.getContentPane().setLayout(null);
 		
-		textField = new JTextField("Nombre invocador");
-		textField.setBounds(26, 91, 139, 20);
-		frame.getContentPane().add(textField);
-		textField.setColumns(10);
+		txtNombreInvocador = new JTextField("Nombre invocador");
+		txtNombreInvocador.setBackground(new Color(255, 255, 255));
+		txtNombreInvocador.setToolTipText("");
+		txtNombreInvocador.setBounds(26, 91, 139, 20);
+		frame.getContentPane().add(txtNombreInvocador);
+		txtNombreInvocador.setColumns(10);
 		
 		JButton btnBuscar = new JButton("Buscar");
 		btnBuscar.setBounds(164, 90, 89, 23);
 		frame.getContentPane().add(btnBuscar);
 		
 		txtServer = new JTextField("Server");
+		
 		txtServer.setBounds(36, 131, 86, 20);
 		frame.getContentPane().add(txtServer);
 		txtServer.setColumns(10);
@@ -73,10 +80,14 @@ public class PantalaPrincipal {
 		JPanel panel = new JPanel();
 		panel.setBounds(164, 39, 10, 10);
 		frame.getContentPane().add(panel);
-
-		Imagen Imagen = new Imagen();
-		panel.add(Imagen);
-		panel.repaint();
+		
+		//ImageIcon imageIcon = new ImageIcon(); // load the image to a imageIcon
+		//Image image = imageIcon.getImage(); // transform it 
+		//Image newimg = image.getScaledInstance(50, 50,  java.awt.Image.SCALE_SMOOTH); // scale it the smooth way  
+		//imageIcon = new ImageIcon(newimg);
+		//panel.setIcon(imageIcon);
+	    
+		
 		
 		
 	}

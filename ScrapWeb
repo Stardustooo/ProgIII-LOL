@@ -82,11 +82,16 @@ public class ScrapWeb {
 		// con su recorrido de los datos.
 		//
 		//
+		
+		//LINK A SCRAPEAR
+		
 		String urlLaLiga = "http://www.laliga.es/jugador/busquets/partidos";
 		procesaWeb( urlLaLiga, pLaLiga );
 		System.out.println( pLaLiga.getDescs() );
 		System.out.println( pLaLiga.getCabs() );
 		System.out.println( pLaLiga.getTabla() );
+		
+		/*
 		urlLaLiga = "http://www.laliga.es/jugador/busquets/partidos/defensivas";
 		procesaWeb( urlLaLiga, pLaLiga );
 		System.out.println( pLaLiga.getDescs() );
@@ -107,7 +112,9 @@ public class ScrapWeb {
 		System.out.println( pLaLiga.getDescs() );
 		System.out.println( pLaLiga.getCabs() );
 		System.out.println( pLaLiga.getTabla() );
+		*/
 		
+		//TAGS "GENERALES" DE LOS CAMPOS A ANALIZAR
 		
 		// Otro ejemplo:
 //		urlAAnalizar = "http://www.marca.com/estadisticas/futbol/primera/2016_17/alaves/";
@@ -142,6 +149,8 @@ public class ScrapWeb {
 //		});
 //		procesaJugadores();
 	}
+	
+		//PROCESADO DE LOS TAGS (TAGS MAS ESPECIFICOS)
 	
 		// Ejemplo: procesado de laliga.es
 		private static class ProcesadoLaLiga implements ProcesadoWeb {

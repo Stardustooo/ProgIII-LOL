@@ -1,4 +1,5 @@
 
+
 import java.awt.EventQueue;
 import java.awt.Image;
 
@@ -68,11 +69,13 @@ public class PantalaPrincipal {
 		label.setBounds(79, 11, 260, 69);
 		frame.getContentPane().add(label);
 		
-		ImageIcon imageIcon = new ImageIcon("C:\\Users\\johnd\\Desktop\\fbh\\Foto"); // load the image to a imageIcon
+		ImageIcon imageIcon = new ImageIcon("C:\\Users\\johnd\\Desktop\\fbh\\Foto.png"); // load the image to a imageIcon
 		Image image = imageIcon.getImage(); // transform it 
-		Image newimg = image.getScaledInstance(50, 50,  java.awt.Image.SCALE_SMOOTH); // scale it the smooth way  
+		Image newimg = image.getScaledInstance(300, 100,  java.awt.Image.SCALE_SMOOTH); // scale it the smooth way  
 		imageIcon = new ImageIcon(newimg);
-	    label.setIcon(new ImageIcon("C:\\Users\\johnd\\Desktop\\fbh\\Foto.png"));
+		label.setIcon(imageIcon);
+	    
+		//label.setIcon(new ImageIcon("C:\\Users\\johnd\\Desktop\\fbh\\Foto.png"));
 	    
 	    JButton btnNewButton = new JButton("Jugador");
 	    btnNewButton.setBounds(222, 140, 79, 23);

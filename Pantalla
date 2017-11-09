@@ -1,0 +1,102 @@
+
+import java.awt.EventQueue;
+import java.awt.Image;
+
+import javax.swing.JFrame;
+import javax.swing.JTextField;
+import javax.swing.AbstractButton;
+import javax.swing.ImageIcon;
+import javax.swing.JButton;
+import java.awt.Color;
+import javax.swing.JPanel;
+import javax.swing.DropMode;
+import javax.swing.JLabel;
+import javax.swing.JScrollBar;
+import java.awt.event.ActionListener;
+import java.awt.event.ActionEvent;
+
+public class PantalaPrincipal {
+
+	private JFrame frame;
+	private JTextField txtNombreInvocador;
+
+	/**
+	 * Launch the application.
+	 */
+	public static void main(String[] args) {
+		EventQueue.invokeLater(new Runnable() {
+			public void run() {
+				try {
+					PantalaPrincipal window = new PantalaPrincipal();
+					window.frame.setVisible(true);
+				} catch (Exception e) {
+					e.printStackTrace();
+				}
+			}
+		});
+	}
+
+	/**
+	 * Create the application.
+	 */
+	public PantalaPrincipal() {
+		initialize();
+	}
+
+	/**
+	 * Initialize the contents of the frame.
+	 */
+	private void initialize() {
+		frame = new JFrame();
+		frame.getContentPane().setBackground(Color.BLACK);
+		frame.setBounds(100, 100, 450, 300);
+		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		frame.getContentPane().setLayout(null);
+		
+		txtNombreInvocador = new JTextField("");
+		txtNombreInvocador.setBackground(new Color(255, 255, 255));
+		txtNombreInvocador.setToolTipText("");
+		txtNombreInvocador.setBounds(143, 122, 158, 20);
+		frame.getContentPane().add(txtNombreInvocador);
+		txtNombreInvocador.setColumns(10);
+		
+		JButton btnBuscar = new JButton("Campeón");
+		btnBuscar.setBounds(143, 140, 79, 23);
+		frame.getContentPane().add(btnBuscar);
+		
+		JLabel label = new JLabel("");
+		label.setBounds(79, 11, 260, 69);
+		frame.getContentPane().add(label);
+		
+		ImageIcon imageIcon = new ImageIcon("C:\\Users\\johnd\\Desktop\\fbh\\Foto"); // load the image to a imageIcon
+		Image image = imageIcon.getImage(); // transform it 
+		Image newimg = image.getScaledInstance(50, 50,  java.awt.Image.SCALE_SMOOTH); // scale it the smooth way  
+		imageIcon = new ImageIcon(newimg);
+	    label.setIcon(new ImageIcon("C:\\Users\\johnd\\Desktop\\fbh\\Foto.png"));
+	    
+	    JButton btnNewButton = new JButton("Jugador");
+	    btnNewButton.setBounds(222, 140, 79, 23);
+	    frame.getContentPane().add(btnNewButton);
+	    
+	    JScrollBar scrollBar = new JScrollBar();
+	    scrollBar.setBounds(94, 122, 17, 20);
+	    frame.getContentPane().add(scrollBar);
+	    
+	    JLabel lblNewLabel = new JLabel("  SV");
+	    lblNewLabel.setBackground(Color.WHITE);
+	    lblNewLabel.setForeground(Color.CYAN);
+	    lblNewLabel.setBounds(112, 125, 31, 14);
+	    frame.getContentPane().add(lblNewLabel);
+	    
+	    JButton btnNewButton_1 = new JButton("OPT");
+	    btnNewButton_1.addActionListener(new ActionListener() {
+	    	public void actionPerformed(ActionEvent e) {
+	    	}
+	    });
+	    btnNewButton_1.setBounds(378, 239, 56, 23);
+	    frame.getContentPane().add(btnNewButton_1);
+		
+		
+		
+	}
+}

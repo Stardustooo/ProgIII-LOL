@@ -1,5 +1,4 @@
 
-
 import java.awt.EventQueue;
 import java.awt.Image;
 
@@ -14,12 +13,14 @@ import javax.swing.DropMode;
 import javax.swing.JLabel;
 import javax.swing.JScrollBar;
 import java.awt.event.ActionListener;
+import java.awt.event.MouseAdapter;
+import java.awt.event.MouseEvent;
 import java.awt.event.ActionEvent;
 
 public class PantalaPrincipal {
 
 	private JFrame frame;
-	private JTextField txtNombreInvocador;
+	private JTextField search;
 
 	/**
 	 * Launch the application.
@@ -49,56 +50,57 @@ public class PantalaPrincipal {
 	 */
 	private void initialize() {
 		frame = new JFrame();
-		frame.getContentPane().setBackground(Color.BLACK);
-		frame.setBounds(100, 100, 450, 300);
+		frame.getContentPane().setBackground(Color.GRAY);
+		frame.setBounds(100, 100, 1080, 720);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frame.getContentPane().setLayout(null);
 		
-		txtNombreInvocador = new JTextField("");
-		txtNombreInvocador.setBackground(new Color(255, 255, 255));
-		txtNombreInvocador.setToolTipText("");
-		txtNombreInvocador.setBounds(143, 122, 158, 20);
-		frame.getContentPane().add(txtNombreInvocador);
-		txtNombreInvocador.setColumns(10);
+		search = new JTextField("Introducir busqueda...");
+		search.setBackground(new Color(255, 255, 255));
+		search.setToolTipText("");
+		search.setBounds(465, 323, 150, 25);
+		frame.getContentPane().add(search);
+		search.setColumns(10);
 		
-		JButton btnBuscar = new JButton("Campeón");
-		btnBuscar.setBounds(143, 140, 79, 23);
-		frame.getContentPane().add(btnBuscar);
+		JButton champs = new JButton("Campeón");
+		champs.setBounds(540, 349, 75, 25);
+		frame.getContentPane().add(champs);
 		
-		JLabel label = new JLabel("");
-		label.setBounds(79, 11, 260, 69);
-		frame.getContentPane().add(label);
+		JLabel logo = new JLabel("");
+		logo.setBounds(390, 164, 300, 100);
+		frame.getContentPane().add(logo);
 		
-		ImageIcon imageIcon = new ImageIcon("C:\\Users\\johnd\\Desktop\\fbh\\Foto.png"); // load the image to a imageIcon
+		ImageIcon imageIcon = new ImageIcon("C:\\Users\\johnd\\Desktop\\GLOL\\logo.png"); // load the image to a imageIcon
 		Image image = imageIcon.getImage(); // transform it 
 		Image newimg = image.getScaledInstance(300, 100,  java.awt.Image.SCALE_SMOOTH); // scale it the smooth way  
 		imageIcon = new ImageIcon(newimg);
-		label.setIcon(imageIcon);
+		logo.setIcon(imageIcon);
 	    
 		//label.setIcon(new ImageIcon("C:\\Users\\johnd\\Desktop\\fbh\\Foto.png"));
 	    
-	    JButton btnNewButton = new JButton("Jugador");
-	    btnNewButton.setBounds(222, 140, 79, 23);
-	    frame.getContentPane().add(btnNewButton);
+	    JButton players = new JButton("Jugador");
+	    players.setBounds(465, 349, 75, 25);
+	    frame.getContentPane().add(players);
 	    
-	    JScrollBar scrollBar = new JScrollBar();
-	    scrollBar.setBounds(94, 122, 17, 20);
-	    frame.getContentPane().add(scrollBar);
-	    
-	    JLabel lblNewLabel = new JLabel("  SV");
-	    lblNewLabel.setBackground(Color.WHITE);
-	    lblNewLabel.setForeground(Color.CYAN);
-	    lblNewLabel.setBounds(112, 125, 31, 14);
-	    frame.getContentPane().add(lblNewLabel);
-	    
-	    JButton btnNewButton_1 = new JButton("OPT");
-	    btnNewButton_1.addActionListener(new ActionListener() {
+	    JButton opt = new JButton("OPT");
+	    opt.addActionListener(new ActionListener() {
 	    	public void actionPerformed(ActionEvent e) {
 	    	}
 	    });
-	    btnNewButton_1.setBounds(378, 239, 56, 23);
-	    frame.getContentPane().add(btnNewButton_1);
-		
+	    opt.setBounds(998, 659, 66, 23);
+	    frame.getContentPane().add(opt);
+	    
+	    JLabel riftback = new JLabel("New label");
+	    riftback.setBounds(100, 100, 1080, 720);
+	    frame.getContentPane().add(riftback);
+	    
+	    
+	    search.addMouseListener(new MouseAdapter(){
+            @Override
+            public void mouseClicked(MouseEvent e){
+                search.setText("");
+            }
+        });
 		
 		
 	}
